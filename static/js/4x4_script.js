@@ -27,12 +27,13 @@
         bl = $('[name=colpick_BL]').val();
         br = $('[name=colpick_BR]').val();
         $.ajax({
-            url: 'http://24.194.15.104/set4x4',
+            url: "http://24.194.15.104/set4x4",
             type: 'POST',
             data: {
                 tl: tl, tr:tr, bl:bl, br:br
             }
         });
+        alert("Done");
     }
     function RUNATPAGELOAD(){
         var ttt = document.getElementsByClassName('input-color-value');
