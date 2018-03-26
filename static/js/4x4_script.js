@@ -1,4 +1,5 @@
     function ColorChanged() {
+        alert("ColorChanged");
         var Color = $(this).val()
         var id = this.id;
         var info=["0","0","0","0"]
