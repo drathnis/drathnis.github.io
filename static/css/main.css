@@ -1,0 +1,13 @@
+    table {
+    border-spacing: 0.25rem;
+        }
+    td {
+    text-align: center;
+    text-indent: 5px;
+    vertical-align: middle;
+    padding: 1rem;
+
+    }
+    td:nth-child(1) { background: hsl(154, 24%, 67%); }
+    td:nth-child(2) { background: hsl(154, 24%, 67%); }
+    td:nth-child(3) { background: hsl(154, 24%, 67%); }
