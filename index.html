@@ -1,6 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+	
+<script>
+	function myFunction() {
+		alert("test1")
+		var info = 101;
+		$.ajax({
+			url: 'http://24.194.15.104/set4x4',
+			type: 'POST',
+			data: {
+			info: info
+			}
+		});
+		alert("test2")
+	}
+
+	function RUNATPAGELOAD() {
+	}
+	window.onload = RUNATPAGELOAD;
+</script>
+
+	
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Hello</title>
@@ -24,7 +45,7 @@
 -->
     <button type="button" name="fourXfour"><a href="/fourXfour.html">4x4</a></button>
     <button type="button" name="RnD"><a href="/modes">RnD</a></button>
-    <button type="button" name="Test"><a href="http://24.194.15.104/toggle">ping</a></button>
+    <button type="button" name="Test" onclick="myFunction() ><a>ping</a></button>
 </h3>
 
 </form>
