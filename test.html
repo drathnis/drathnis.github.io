@@ -31,7 +31,7 @@
     var x = new XMLHttpRequest();
     var url = "http://24.194.15.104/toggle";
     x.open(options.method, cors_api_url + url);
-    x.onload = x.onerror = function() {};
+    x.onload = x.onerror;
     if (/^POST/i.test(options.method)) {
       x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
@@ -50,8 +50,7 @@
         url: urlField.value,
         data: dataField.value
       });
-    };
-  })();
+  });
   if (typeof console === 'object') {
     console.log('// To test a local CORS Anywhere server, set cors_api_url. For example:');
     console.log('cors_api_url = "http://localhost:8080/"');
