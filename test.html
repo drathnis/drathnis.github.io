@@ -9,7 +9,7 @@
 <body>
 <div id="top">
   <label>
-    v.02
+    v.03
     <br>
   </label>
   <label>
@@ -49,8 +49,6 @@
         method: this.id === 'post' ? 'POST' : 'GET',
         url: urlField.value,
         data: dataField.value
-      }, function printResult(result) {
-        outputField.value = result;
       });
     };
   })();
