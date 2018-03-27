@@ -5,17 +5,13 @@
 
 function GetOptions() {
   
-        var originalURL = "http://24.194.15.104/print";
+        var originalURL = "http://24.194.15.104/modes";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
         $.ajax({
         url: queryURL,
         method: "GET",
 		dataType: "json",
-		success: function(result)
-		{
-			alert(result);
-		}
         // this headers section is necessary for CORS-anywhere
         headers: {
         "x-requested-with": "xhr" 
@@ -25,7 +21,10 @@ function GetOptions() {
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
         })
-
+		success: function(result)
+		{
+			alert(result);
+		}
     }
 
 
@@ -49,7 +48,6 @@ function GetOptions() {
 <h3>
     <button type="button" name="fourXfour"><a href="/fourXfour.html">Static Colors</a></button>
     <button type="button" name="RnD"><a href="/modes">Dynamic Colors</a></button>
-	<button type="button" name="RnD" onClick = GetOptions() >Server Stat</a></button>
 </h3>
 
 </form>
