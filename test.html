@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CORS Test</title>
+<title>Demo of CORS Anywhere</title>
 <meta name="viewport" content="width=device-width">
 
 </head>
 <body>
 <div id="top">
+  CORS Anywhere demo &bull; <a href="https://github.com/Rob--W/cors-anywhere/">Github</a> &bull; <a href="http://cors-anywhere.herokuapp.com">Live server</a>.
   <label>
-    v.05
-    <br>
+    Url to be fetched (example: <a href="//robwu.nl/dump.php">robwu.nl/dump.php</a>)
+    <input type="url" id="url" value="">
   </label>
   <label>
     If using POST, enter the data:
     <input type="text" id="data">
   </label>
   <label>
-    <button id="get">GET</button>
-    <button id="post">POST</button>
+    <button id="get">GET</button><button id="post">POST</button>
   </label>
 </div>
 <div id="bottom">
@@ -28,19 +28,20 @@
 <script>
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options) {
-    alert("v.06");
+	alert('2 v.01');
     var x = new XMLHttpRequest();
-    var url = "http://24.194.15.104/toggle";
-    x.open(options.method, cors_api_url + url);
-    x.onload = x.onerror;
+    x.open(options.method, cors_api_url + options.url);
+    x.onload = x.onerror = function() {
+    };
     if (/^POST/i.test(options.method)) {
       x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
     x.send(options.data);
+	alert('1 v.01');
   }
+
   // Bind event
   (function() {
-    alert("1.v.01");
     var dataField = document.getElementById('data');
     var outputField = document.getElementById('output');
     document.getElementById('get').onclick =
@@ -50,7 +51,8 @@
         method: this.id === 'post' ? 'POST' : 'GET',
         data: dataField.value
       });
-  });
+    };
+  })();
   if (typeof console === 'object') {
     console.log('// To test a local CORS Anywhere server, set cors_api_url. For example:');
     console.log('cors_api_url = "http://localhost:8080/"');
