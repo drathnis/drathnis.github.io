@@ -17,7 +17,8 @@
     <input type="text" id="data">
   </label>
   <label>
-    <button id="get">GET</button><button id="post">POST</button>
+    <button id="get">GET</button>
+    <button id="post">POST</button>
   </label>
 </div>
 <div id="bottom">
@@ -26,7 +27,7 @@
 
 <script>
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-  function doCORSRequest(options, printResult) {
+  function doCORSRequest(options) {
     alert("v.06");
     var x = new XMLHttpRequest();
     var url = "http://24.194.15.104/toggle";
