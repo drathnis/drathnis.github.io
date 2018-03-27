@@ -79,12 +79,23 @@
         data.push(R_color1);
         data.push(R_color2);
         data.push(R_speed);
-
+        
+        var originalURL = "http://24.194.15.104/modes";
+	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
+        
         $.ajax({
-            url: '/modes',
-            type: 'POST',
-            data: {data: JSON.stringify(data)}
-        });
+        url: queryURL,
+        method: "POST",
+        data: {data: JSON.stringify(data)},
+        // this headers section is necessary for CORS-anywhere
+        headers: {
+        "x-requested-with": "xhr" 
+        }
+        }).done(function(response) {
+        console.log('CORS anywhere response', response);
+        }).fail(function(jqXHR, textStatus) { 
+        console.error(textStatus)
+        })
 
     }
 
