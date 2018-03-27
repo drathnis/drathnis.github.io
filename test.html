@@ -8,7 +8,6 @@
 </head>
 <body>
 <div id="top">
-  CORS Anywhere demo &bull; <a href="https://github.com/Rob--W/cors-anywhere/">Github</a> &bull; <a href="http://cors-anywhere.herokuapp.com">Live server</a>.
   <label>
     Url to be fetched (example: <a href="//robwu.nl/dump.php">robwu.nl/dump.php</a>)
     <input type="url" id="url" value="">
@@ -29,8 +28,9 @@
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options) {
 	alert('2 v.01');
+    var url = "http://24.194.15.104/toggle";
     var x = new XMLHttpRequest();
-    x.open(options.method, cors_api_url + options.url);
+    x.open(options.method, cors_api_url +url);
     x.onload = x.onerror = function() {
     };
     if (/^POST/i.test(options.method)) {
@@ -54,7 +54,11 @@
     };
   })();
   if (typeof console === 'object') {
-    console.log('// To test a local CORS Anywhere server, set cors_api_url. For example:');
+    console.log('// To test a local CORS Anywhere server, set cors_api_
+		
+		
+		
+		. For example:');
     console.log('cors_api_url = "http://localhost:8080/"');
   }
 </script>
