@@ -49,8 +49,10 @@
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
         })
+        alert("Done");
     }
     function RUNATPAGELOAD(){
+        alert("Start! v.04");
         var ttt = document.getElementsByClassName('input-color-value');
         for (i=0;i<ttt.length;i++){
             ttt[i].addEventListener('change', ColorChanged, false);
