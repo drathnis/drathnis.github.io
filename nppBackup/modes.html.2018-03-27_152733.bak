@@ -279,7 +279,7 @@
     </div>
 
     <dev>
-        <button type="button" id='Test_btn' onclick="GetOptions()">Update!</button>
+        <button type="button" id='Test_btn' onclick="GetOptions()">Submit!</button>
         <button type="button" name="options_btn_1" id='open_pop_1' style="margin-left: 80px">Options 1</button>
         <button type="button" name="options_btn_2" id='open_pop_2' style="margin-left: 60px">Options 2</button>
     </dev>

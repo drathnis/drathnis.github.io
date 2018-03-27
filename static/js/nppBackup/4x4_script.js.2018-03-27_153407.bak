@@ -1,5 +1,4 @@
     function ColorChanged() {
-		var data = [];
         var Color = $(this).val()
         var id = this.id;
         var info=["0","0","0","0"]
@@ -27,11 +26,6 @@
         tr = $('[name=colpick_TR]').val();
         bl = $('[name=colpick_BL]').val();
         br = $('[name=colpick_BR]').val();
-		
-		data.push(tl);
-		data.push(tr);
-		data.push(bl);
-		data.push(br);
 		
         var originalURL = "http://24.194.15.104/set4x4";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL

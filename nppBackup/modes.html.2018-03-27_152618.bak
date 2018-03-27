@@ -51,12 +51,18 @@
 <script>
 
 
+    function test() {
+//        alert("test2")
+    }
+
     function GetOptions() {
         var data = [];
+
 
         data.push(document.getElementById("enable_strips_id").value)
         data.push(document.getElementById('left_side_id').value);
         data.push(document.getElementById('right_side_id').value);
+
 
         var L_color1 = $('[name=L_Color_1]').val();
         var L_color2 = $('[name=L_Color_2]').val();
@@ -90,10 +96,9 @@
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
         })
-		
+
     }
-	//Doesnt to anything anymore but leaving it
-	//so i can do somthing with it later
+
     function optionChanged() {
 
         var temp = document.getElementById('enable_strips_id');
@@ -279,7 +284,7 @@
     </div>
 
     <dev>
-        <button type="button" id='Test_btn' onclick="GetOptions()">Update!</button>
+        <button type="button" id='Test_btn' onclick="GetOptions()">Submit!</button>
         <button type="button" name="options_btn_1" id='open_pop_1' style="margin-left: 80px">Options 1</button>
         <button type="button" name="options_btn_2" id='open_pop_2' style="margin-left: 60px">Options 2</button>
     </dev>

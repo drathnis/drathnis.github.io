@@ -6,6 +6,7 @@
 
 
 
+
 <html>
 
 <head>
@@ -73,5 +74,14 @@
     </td>
   </tr>
 </table>
+
+<br>
+<br>
+<form>
+    v.01
+    Enter Text!:<br>
+    <input type="text" name="name_box"><br>
+
+</form>
 
 </html>

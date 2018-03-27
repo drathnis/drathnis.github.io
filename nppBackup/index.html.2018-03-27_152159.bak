@@ -18,8 +18,11 @@
 
 
 <h3>
-    <button type="button" name="fourXfour"><a href="/fourXfour.html">Static Colors</a></button>
-    <button type="button" name="RnD"><a href="/modes">Dynamic Colors</a></button>
+<!--
+    <button type="button" name="Test"><a href="/shutdown">Shutdown</a></button>
+-->
+    <button type="button" name="fourXfour"><a href="/fourXfour.html">4x4</a></button>
+    <button type="button" name="RnD"><a href="/modes">RnD</a></button>
 </h3>
 
 </form>
