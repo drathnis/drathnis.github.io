@@ -24,24 +24,25 @@
 	window.onload = RUNATPAGELOAD;
 	
 	
-	function ajaxtest(){
+function ajaxtest(){
 	var originalURL = "http://24.194.15.104/print";
-    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
-
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-      dataType: "json",
-      // this headers section is necessary for CORS-anywhere
-      headers: {
-        "x-requested-with": "xhr" 
-      }
-    }).done(function(response) {
-      console.log('CORS anywhere response', response);
-    }).fail(function(jqXHR, textStatus) { 
-      console.error(textStatus)
-    })
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
+	var data = [];
+	data.push("MyData")
+	$.ajax({
+	url: queryURL,
+	method: "POST",
+	data: {data: JSON.stringify(data)},
+	// this headers section is necessary for CORS-anywhere
+	headers: {
+	"x-requested-with": "xhr" 
 	}
+	}).done(function(response) {
+	console.log('CORS anywhere response', response);
+	}).fail(function(jqXHR, textStatus) { 
+	console.error(textStatus)
+	})
+}
 	
 </script>
 
@@ -58,7 +59,7 @@
 <h1>
 	Hello!
 	<br>
-	Version: .09
+	Version: .091
 </h1>
 
 
