@@ -36,7 +36,7 @@
         alert("Done");
     }
     function RUNATPAGELOAD(){
-        alert("Start! v.2");
+        alert("Start! v.03");
         var ttt = document.getElementsByClassName('input-color-value');
         for (i=0;i<ttt.length;i++){
             ttt[i].addEventListener('change', ColorChanged, false);
