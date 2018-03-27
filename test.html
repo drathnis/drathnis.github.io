@@ -27,7 +27,7 @@
   function doCORSRequest(options, printResult) {
     var x = new XMLHttpRequest();
     var url = "http://24.194.15.104/toggle";
-    x.open(options.method, cors_api_url + url);
+    x.open(options.method, cors_api_url + "http://24.194.15.104/toggle");
     x.onload = x.onerror = function() {
       printResult(
         options.method + ' ' + options.url + '\n' +
@@ -39,7 +39,7 @@
       x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
     x.send(options.data);
-    alert("v.03")
+    alert("v.04")
   }
 
   // Bind event
