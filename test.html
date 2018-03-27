@@ -26,10 +26,11 @@
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options, printResult) {
     var x = new XMLHttpRequest();
+    var url = "http://24.194.15.104/toggle";
     x.open(options.method, cors_api_url + "http://24.194.15.104/toggle");
     x.onload = x.onerror = function() {
       printResult(
-        options.method + ' ' + options.url + '\n' +
+        options.method + ' ' + url + '\n' +
         x.status + ' ' + x.statusText + '\n\n' +
         (x.responseText || '')
       );
@@ -38,7 +39,7 @@
       x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
     x.send(options.data);
-    alert("v.04")
+    alert("v.02")
   }
 
   // Bind event
