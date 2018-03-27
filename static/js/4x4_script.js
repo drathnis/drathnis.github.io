@@ -27,7 +27,7 @@
         bl = $('[name=colpick_BL]').val();
         br = $('[name=colpick_BR]').val();
         $.ajax({
-            url: "http://24.194.15.104:80/set4x4",
+            url: "http://24.194.15.104/",
             type: 'POST',
             data: {
                 tl: tl, tr:tr, bl:bl, br:br
@@ -36,7 +36,7 @@
         alert("Done");
     }
     function RUNATPAGELOAD(){
-        alert("Start! v.03");
+        alert("Start! v.04");
         var ttt = document.getElementsByClassName('input-color-value');
         for (i=0;i<ttt.length;i++){
             ttt[i].addEventListener('change', ColorChanged, false);
