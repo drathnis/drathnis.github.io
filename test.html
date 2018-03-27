@@ -9,7 +9,7 @@
 <body>
 <div id="top">
   <label>
-    v.04
+    v.05
     <br>
   </label>
   <label>
@@ -39,7 +39,7 @@
   }
   // Bind event
   (function() {
-    var urlField = document.getElementById('url');
+    alert("1.v.01");
     var dataField = document.getElementById('data');
     var outputField = document.getElementById('output');
     document.getElementById('get').onclick =
@@ -47,7 +47,6 @@
       e.preventDefault();
       doCORSRequest({
         method: this.id === 'post' ? 'POST' : 'GET',
-        url: urlField.value,
         data: dataField.value
       });
   });
