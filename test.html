@@ -9,10 +9,8 @@
 <body>
 <div id="top">
   <label>
-    v.01
-    <dev>
-    Url to be fetched
-    <input type="url" id="url" value="">
+    v.02
+    <br>
   </label>
   <label>
     If using POST, enter the data:
@@ -29,17 +27,11 @@
 <script>
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options, printResult) {
-    alert("v.05");
+    alert("v.06");
     var x = new XMLHttpRequest();
     var url = "http://24.194.15.104/toggle";
     x.open(options.method, cors_api_url + url);
-    x.onload = x.onerror = function() {
-      printResult(
-        options.method + ' ' + url + '\n' +
-        x.status + ' ' + x.statusText + '\n\n' +
-        (x.responseText || '')
-      );
-    };
+    x.onload = x.onerror = function() {};
     if (/^POST/i.test(options.method)) {
       x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
