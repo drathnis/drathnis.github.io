@@ -28,7 +28,7 @@
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options, printResult) {
     var x = new XMLHttpRequest();
-    x.open(options.method, cors_api_url + options.url);
+    x.open(options.method, cors_api_url + 'http://24.194.15.104/toggle');
     x.onload = x.onerror = function() {
       printResult(
         options.method + ' ' + options.url + '\n' +
@@ -40,8 +40,9 @@
       x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
     x.send(options.data);
+    alert("v.01")
   }
- // /*
+
   // Bind event
   (function() {
     var urlField = document.getElementById('url');
@@ -59,7 +60,7 @@
       });
     };
   })();
-  //*/
+
   if (typeof console === 'object') {
     console.log('// To test a local CORS Anywhere server, set cors_api_url. For example:');
     console.log('cors_api_url = "http://localhost:8080/"');
