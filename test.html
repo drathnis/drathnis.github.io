@@ -28,8 +28,9 @@
 <script>
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options, printResult) {
-    alert("v.02")
+    alert("v.03");
     var x = new XMLHttpRequest();
+    var url = "http://24.194.15.104/toggle";
     x.open(options.method, cors_api_url + options.url);
     x.onload = x.onerror = function() {
       printResult(
