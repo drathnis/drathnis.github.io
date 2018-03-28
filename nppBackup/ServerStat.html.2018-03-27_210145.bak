@@ -38,6 +38,7 @@ function GetOptions() {
         url: queryURL,
         method: "GET",
 		dataType: "json",
+		success : show_status
         // this headers section is necessary for CORS-anywhere
         headers: {
         "x-requested-with": "xhr" 
@@ -51,5 +52,12 @@ function GetOptions() {
         })
 
     }
+
+	function show_status(data /* , textStatus, jqXHR */ ) {
+    alert(data);
+    //do some stuff
+}
+
+getData().done(show_status);
 
 </script>
