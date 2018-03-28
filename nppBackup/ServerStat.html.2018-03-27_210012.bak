@@ -30,11 +30,11 @@
 
 function GetOptions() {
 		
-		alert("v.03")
+		alert("v.02")
         var originalURL = "http://24.194.15.104/print";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
-        $.ajax({
+        return $.ajax({
         url: queryURL,
         method: "GET",
 		dataType: "json",
