@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Server Status</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-    <script src="script.js"></script>
-    <script>
+<head>
+<meta charset="utf-8">
+<title>Server Status</title>
+<link href="style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="script.js"></script>
+<script>
 
-function GetOptions() {
+function GetStatus() {
 		
-		alert("v.01")
         var originalURL = "http://24.194.15.104/status";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
@@ -25,27 +24,66 @@ function GetOptions() {
         "x-requested-with": "xhr" 
         }
         }).done(function(response) {
-		alert("Success" + response);
+
+		
+		document.getElementById('statlable2').innerHTML = 'On!';
+		document.getElementById('dev1').style.backgroundColor = 'lime';
+		
         console.log('CORS anywhere response', response);
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
-		alert("Failed");
+        
+		document.getElementById('statlable2').innerHTML = 'Off!';
+		document.getElementById('dev1').style.backgroundColor = 'red';
+
         })
 
     }
 
+	window.onload = GetStatus;
 </script>
 
-  </head>
-  <body>
-  
-<form id="form1">
+<style>
+	#dev1
+	{
+		background-color: red;
+		width: 150px;
+		height: 120px;
+		text-align:center;
+		padding-top:50px;
+		line-height:100%;
+		font-weight:bold;
+		font-size:30px;
+		color:black;
+		
+	}
 
-<h1>
-	<button type="button" name="RnD" onclick = 'GetOptions()'>Get Server Status</button>
-</h1>
+	#button_id
+	{
+		width: 160px;
+		height: 60px;
+	}
+</style>
 
+</head>
+
+<body>
+
+<form id="form">
+	<section id="dev1">
+	
+	<label id="statlable1">
+	Server is
+	</label>
+	<label id="statlable2">
+	Down
+	</label>
+
+	</section>
 
 </form>
-  </body>
+
+
+</body>
+
 </html>
