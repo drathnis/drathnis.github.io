@@ -1,36 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-
-
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Server Status</title>
-</head>
-
-<body>
-
-<form id="form1">
-
-<h1>
-	<button type="button" name="RnD" onclick = 'GetOptions()'>Server Stat</a></button>
-</h1>
-
-
-</form>
-
-
-</body>
-
-
-</html>
-
-<script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script>
 
 function GetOptions() {
 		
-		alert("v.05")
+		alert("v.01")
         var originalURL = "http://24.194.15.104/status";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
@@ -53,3 +32,19 @@ function GetOptions() {
     }
 
 </script>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Server Status</title>
+
+  </head>
+  <body>
+  
+<form id="form1">
+
+<h1>
+	<button type="button" name="RnD" onclick = 'GetOptions()'>Get Server Status</button>
+</h1>
+
+
+</form>
+  </body>
+</html>
