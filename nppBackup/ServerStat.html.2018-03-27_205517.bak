@@ -30,34 +30,25 @@
 
 function GetOptions() {
 		
-		alert("v.02")
+		alert("v.01")
         var originalURL = "http://24.194.15.104/print";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
-        return $.ajax({
+        $.ajax({
         url: queryURL,
         method: "GET",
 		dataType: "json",
-		success : show_status
         // this headers section is necessary for CORS-anywhere
         headers: {
         "x-requested-with": "xhr" 
         }
         }).done(function(response) {
         console.log('CORS anywhere response', response);
-		alert("Success");
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
-		alert("Failed");
         })
 
     }
 
-	function show_status(data /* , textStatus, jqXHR */ ) {
-    alert(data);
-    //do some stuff
-}
-
-getData().done(show_status);
 
 </script>
