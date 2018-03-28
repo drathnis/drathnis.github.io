@@ -44,16 +44,17 @@ function GetOptions() {
 
 <h1>
 	Hello!
-	<br>
-	This is still under development. ;)
 </h1>
 
 
 <h3>
     <button type="button" name="fourXfour"><a href="/fourXfour.html">Static Colors</a></button>
     <button type="button" name="RnD"><a href="/modes">Dynamic Colors</a></button>
-
-
+<<<<<<< HEAD
+	<button type="button" name="RnD" onClick = "GetOptions()" >Server Stat</a></button>
+=======
+	<button type="button" name="RnD" onclick = "GetOptions()" >Server Stat</a></button>
+>>>>>>> 97f62e3b7d5ddfe7c946db5f4715517cfa2bf0f7
 </h3>
 
 </form>
