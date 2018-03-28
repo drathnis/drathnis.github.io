@@ -1,51 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<link href="style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="script.js"></script>
 <script>
+	function GetOptions(){
+			
+			alert("v.01")
+			var originalURL = "http://24.194.15.104/print";
+			var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
+			
+			$.ajax({
+			url: queryURL,
+			method: "GET",
+			dataType: "json",
+			success: function(result)
+			{
+				alert(result);
+			}
+			// this headers section is necessary for CORS-anywhere
+			headers: {
+			"x-requested-with": "xhr" 
+			}
+			}).done(function(response) {
+			console.log('CORS anywhere response', response);
+			}).fail(function(jqXHR, textStatus) { 
+			console.error(textStatus)
+			})
+	}	
+	
+</script>
 
-function GetOptions() {
-		
-		alert("v.01")
-        var originalURL = "http://24.194.15.104/print";
-	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
-        
-        $.ajax({
-        url: queryURL,
-        method: "GET",
-		dataType: "json",
-		success: function(result)
-		{
-			alert(result);
-		}
-        // this headers section is necessary for CORS-anywhere
-        headers: {
-        "x-requested-with": "xhr" 
-        }
-        }).done(function(response) {
-        console.log('CORS anywhere response', response);
-        }).fail(function(jqXHR, textStatus) { 
-        console.error(textStatus)
-        })
+</head>
+<body>
+<script>
+	function stat() { 
+	
+		document.getElementById("content").innerHTML='<object type="text/html" data="ServerStat.html" ></object>';
+ 	}
 
-    }
+	window.onload = stat;
 
 
 </script>
-
-	
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Hello</title>
-</head>
-
-<body>
 
 <form id="form1" runat="server">
 
 <h1>
 	Hello!
 	<br>
-	This is still under development. ;)
+	This is still under development. :)
 </h1>
 
 
@@ -53,14 +62,17 @@ function GetOptions() {
     <button type="button" name="fourXfour"><a href="/fourXfour.html">Static Colors</a></button>
     <button type="button" name="RnD"><a href="/modes">Dynamic Colors</a></button>
 
-
 </h3>
 
 </form>
 
 
+<div id="content">
+
+</div>
+
+
+
 </body>
 
-
 </html>
-

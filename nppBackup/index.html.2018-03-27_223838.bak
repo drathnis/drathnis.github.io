@@ -35,14 +35,11 @@
 			})
 	}
 
+	window.onload = function() {
+    
+	document.getElementById("form2").innerHTML='<object type="text/html" data="ServerStat.html" ></object>';
 	
-	function stat() { 
-		alert("v.01")
-//		document.getElementById("form2").innerHTML='<object type="text/html" data="ServerStat.html" ></object>';
- 	}
-
-	window.onload = stat();
-	
+	};
 	
 </script>
 
@@ -70,12 +67,10 @@
 
 </form>
 
-
-<div id="content">
-
-</div>
+<form id="form2>
 
 
+</form>
 
 </body>
 

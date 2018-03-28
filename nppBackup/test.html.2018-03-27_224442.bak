@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+
+<script>
+	function myFunction() {
+		
+		var info = 101;
+		alert("test1")
+		$.ajax({
+			url: "www.julianstanton.com/set4x4",
+			type: 'POST',
+			data: {
+			info: info
+			}
+		});
+		alert("test2")
+	}
+	function RUNATPAGELOAD() {
+	}
+	window.onload = RUNATPAGELOAD;
+	
+	
+function ajaxtest(){
+	var originalURL = "http://24.194.15.104/print";
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
+	var data = [];
+	data.push("MyData")
+	$.ajax({
+	url: queryURL,
+	method: "POST",
+	data: {data: JSON.stringify(data)},
+	// this headers section is necessary for CORS-anywhere
+	headers: {
+	"x-requested-with": "xhr" 
+	}
+	}).done(function(response) {
+	console.log('CORS anywhere response', response);
+	}).fail(function(jqXHR, textStatus) { 
+	console.error(textStatus)
+	})
+}
+	
+</script>
+
+	
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Hello</title>
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+
+<h1>
+	Hello!
+	<br>
+	Version: .091
+</h1>
+
+
+<h3>
+    <button type="button" name="Test" onclick="ajaxtest()"><a>ping</a></button>
+</h3>
+
+</form>
+</body>
+</html>
