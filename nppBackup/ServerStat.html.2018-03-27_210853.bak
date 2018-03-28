@@ -30,8 +30,8 @@
 
 function GetOptions() {
 		
-		alert("v.04")
-        var originalURL = "http://24.194.15.104/status";
+		alert("v.03")
+        var originalURL = "http://24.194.15.104/print";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
         $.ajax({
@@ -43,8 +43,8 @@ function GetOptions() {
         "x-requested-with": "xhr" 
         }
         }).done(function(response) {
-		alert("Success");
         console.log('CORS anywhere response', response);
+		alert("Success");
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
 		alert("Failed");

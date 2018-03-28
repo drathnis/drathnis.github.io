@@ -45,6 +45,7 @@ function GetOptions() {
         }).done(function(response) {
 		alert("Success");
         console.log('CORS anywhere response', response);
+		
         }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
 		alert("Failed");
