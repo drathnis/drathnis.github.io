@@ -328,7 +328,6 @@
         </div>
 
         <button type="button" id='L_Close_btn'>Done</button>
-		<button type="button" id='L_preset1_btn'>Preset1</button>
     </div>
 
 </div>
@@ -388,13 +387,13 @@
     var r_span = document.getElementsByClassName("close")[1];
 	
 	L_preset1_btn.onclick = function(){
-		preset(0);
 		modal_L.style.display = "none";
+		preset(0);
 	}
 	
 	R_preset1_btn.onclick = function(){
-		preset(1);
 		modal_R.style.display = "none";
+		preset(1);
 	}
 	
     btn1.onclick = function () {

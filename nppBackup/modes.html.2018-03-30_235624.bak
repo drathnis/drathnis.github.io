@@ -103,15 +103,8 @@
     }
 	
 	function preset(val){
-		
-		if(val==0){
-			$('[name=L_Color_1]').val('#FF0000')
-			$('[name=L_Color_2]').val('#00FF00')
-		}
-		if(val==1){
-			$('[name=R_Color_1]').val('#FF0000')
-			$('[name=R_Color_2]').val('#00FF00')
-		}
+		alert(val);
+	
 	}
 	
 	//Doesnt to anything anymore but leaving it
@@ -328,7 +321,6 @@
         </div>
 
         <button type="button" id='L_Close_btn'>Done</button>
-		<button type="button" id='L_preset1_btn'>Preset1</button>
     </div>
 
 </div>
@@ -379,7 +371,6 @@
     var r_close_btn = document.getElementById("R_Close_btn");
 	
 	var R_preset1_btn = document.getElementById("R_preset1_btn");
-	var L_preset1_btn = document.getElementById("L_preset1_btn");
 	
     var btn1 = document.getElementById("open_pop_1");
     var btn2 = document.getElementById("open_pop_2");
@@ -387,14 +378,10 @@
     var l_span = document.getElementsByClassName("close")[0];
     var r_span = document.getElementsByClassName("close")[1];
 	
-	L_preset1_btn.onclick = function(){
-		preset(0);
-		modal_L.style.display = "none";
-	}
 	
 	R_preset1_btn.onclick = function(){
-		preset(1);
-		modal_R.style.display = "none";
+	
+	
 	}
 	
     btn1.onclick = function () {

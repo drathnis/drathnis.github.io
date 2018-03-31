@@ -389,12 +389,10 @@
 	
 	L_preset1_btn.onclick = function(){
 		preset(0);
-		modal_L.style.display = "none";
 	}
 	
 	R_preset1_btn.onclick = function(){
 		preset(1);
-		modal_R.style.display = "none";
 	}
 	
     btn1.onclick = function () {

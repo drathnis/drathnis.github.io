@@ -101,30 +101,25 @@
         })
 		
     }
-	
-	function preset(val){
-		
-		if(val==0){
-			$('[name=L_Color_1]').val('#FF0000')
-			$('[name=L_Color_2]').val('#00FF00')
-		}
-		if(val==1){
-			$('[name=R_Color_1]').val('#FF0000')
-			$('[name=R_Color_2]').val('#00FF00')
-		}
-	}
-	
 	//Doesnt to anything anymore but leaving it
 	//so i can do somthing with it later
     function optionChanged() {
-		return;
+
         var temp = document.getElementById('enable_strips_id');
         var selected_strip = temp.options[temp.selectedIndex].value;
 
         var yourSelect = document.getElementById(this.id);
         var value = yourSelect.options[yourSelect.selectedIndex].value;
         var id = yourSelect.id;
-
+        /*
+        $.ajax({
+            url: '/modes',
+            type: 'POST',
+            data: {
+                strip: selected_strip, id: id, val: value
+            }
+        });
+        */
     }
 
     function RUNATPAGELOAD() {
@@ -144,7 +139,7 @@
 </script>
 
 
-    <style type="text/css">
+    <style>
 
         @import "https://fonts.googleapis.com/css?family=Raleway";
 
@@ -304,20 +299,20 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close" id="L_close_id">&times;</span>
-        <div>
+        <dev>
             <span class="label"><b>Options For Left Side</b></span>
-        </div>
+        </dev>
         <br>
-        <div>
+        <dev>
             <label>Color One</label>
             <label style="margin-left:30px">Color Two</label>
-        </div>
+        </dev>
         <br>
-        <div>
+        <dev>
             <input type="color" id="Color_1_id" name="L_Color_1" value="{{picker}}" class="option-color-value">
             <input type="color" id="Color_2_id" name="L_Color_2" value="{{picker}}" class="option-color-value"
                    style="margin-left:55px">
-        </div>
+        </dev>
         <div>
             <span class="label">Speed</span>
         </div>
@@ -328,7 +323,6 @@
         </div>
 
         <button type="button" id='L_Close_btn'>Done</button>
-		<button type="button" id='L_preset1_btn'>Preset1</button>
     </div>
 
 </div>
@@ -338,20 +332,20 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close" id="R_close_id">&times;</span>
-        <div>
+        <dev>
             <span class="label"><b>Options For Right Side</b></span>
-        </div>
+        </dev>
         <br>
-        <div>
+        <dev>
             <label>Color One</label>
             <label style="margin-left:30px">Color Two</label>
-        </div>
+        </dev>
         <br>
-        <div>
+        <dev>
             <input type="color" id="R_Color_1_id" name="R_Color_1" value="{{picker}}" class="option-color-value">
             <input type="color" id="R_Color_2_id" name="R_Color_2" value="{{picker}}" class="option-color-value"
                    style="margin-left:55px">
-        </div>
+        </dev>
         <div>
             <span class="label">Speed</span>
         </div>
@@ -362,7 +356,6 @@
         </div>
 
         <button type="button" id='R_Close_btn'>Done</button>
-		<button type="button" id='R_preset1_btn'>Preset1</button>
     </div>
 
 </div>
@@ -377,26 +370,13 @@
 
     var l_close_btn = document.getElementById("L_Close_btn");
     var r_close_btn = document.getElementById("R_Close_btn");
-	
-	var R_preset1_btn = document.getElementById("R_preset1_btn");
-	var L_preset1_btn = document.getElementById("L_preset1_btn");
-	
+
     var btn1 = document.getElementById("open_pop_1");
     var btn2 = document.getElementById("open_pop_2");
 
     var l_span = document.getElementsByClassName("close")[0];
     var r_span = document.getElementsByClassName("close")[1];
-	
-	L_preset1_btn.onclick = function(){
-		preset(0);
-		modal_L.style.display = "none";
-	}
-	
-	R_preset1_btn.onclick = function(){
-		preset(1);
-		modal_R.style.display = "none";
-	}
-	
+
     btn1.onclick = function () {
         modal_L.style.display = "block";
     }
