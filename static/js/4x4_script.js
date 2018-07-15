@@ -1,6 +1,6 @@
 
     function ColorChanged() {
-        <script type="text/javascript" src="address.js"></script> 
+        var address = "http://24.194.17.176"
         
 		var data = [];
         var Color = $(this).val()
