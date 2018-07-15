@@ -36,7 +36,7 @@
 		data.push(bl);
 		data.push(br);
 		
-        var originalURL = address+"/set4x4";
+        var originalURL = "http://24.194.17.176/set4x4";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
         $.ajax({
