@@ -22,7 +22,7 @@
         data.push(R_color2);
         data.push(R_speed);
         
-        var originalURL = "http://24.194.15.104/modes";
+        var originalURL = newaddress.ip+"/modes";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
         $.ajax({
