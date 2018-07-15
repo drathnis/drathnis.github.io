@@ -1,1 +1,3 @@
-var newaddress = "http://24.194.17.176"
+var newaddress = {
+    ip: "http://24.194.17.176"
+ };
