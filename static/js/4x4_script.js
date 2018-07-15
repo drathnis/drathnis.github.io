@@ -1,4 +1,7 @@
+
     function ColorChanged() {
+        <script type="text/javascript" src="address.js"></script> 
+        
 		var data = [];
         var Color = $(this).val()
         var id = this.id;
@@ -33,7 +36,7 @@
 		data.push(bl);
 		data.push(br);
 		
-        var originalURL = "http://24.194.15.104/set4x4";
+        var originalURL = address+"/set4x4";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
         
         $.ajax({
