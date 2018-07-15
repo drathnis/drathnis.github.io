@@ -1,7 +1,7 @@
 
     function ColorChanged() {
         var address = "http://24.194.17.176"
-        
+        alart(newaddress)
 		var data = [];
         var Color = $(this).val()
         var id = this.id;

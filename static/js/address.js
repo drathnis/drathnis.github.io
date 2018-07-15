@@ -1,1 +1,1 @@
-var address = "http://24.194.17.176"
+var newaddress = "http://24.194.17.176"
