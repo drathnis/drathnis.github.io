@@ -1,6 +1,7 @@
 
     function ColorChanged() {
         var address = "http://24.194.17.176"
+        alert("V1.0");
         alert(newaddress)
 		var data = [];
         var Color = $(this).val()
