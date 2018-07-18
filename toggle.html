@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Title</title>
+<title>Toggle</title>
 <link href="style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
@@ -15,7 +15,6 @@
 
 <script>
 function GetStatus() {
-        alert("Done 1")
 		//var originalURL = newaddress.ip+"/toggle";
         var originalURL = "http://24.194.17.176/toggle";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
@@ -29,7 +28,6 @@ function GetStatus() {
         "x-requested-with": "xhr" 
         }
         })
-        alert("Done 2")
     }
 
 	window.onload = GetStatus;
