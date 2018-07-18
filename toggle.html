@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +10,13 @@
 <script src="script.js"></script>
 
 
+<script src="/static/js/address.js" charset="utf-8"></script>
+
+
 <script>
+function GetStatus() {
+        alert("Done 1")
+		//var originalURL = newaddress.ip+"/toggle";
         var originalURL = "http://24.194.17.176/toggle";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
 		
@@ -22,20 +28,8 @@
         headers: {
         "x-requested-with": "xhr" 
         }
-        }).done(function(response) {
-
-		
-		document.getElementById('statlable2').innerHTML = 'On!';
-		document.getElementById('dev1').style.backgroundColor = 'lime';
-		
-        console.log('CORS anywhere response', response);
-        }).fail(function(jqXHR, textStatus) { 
-        console.error(textStatus)
-        
-		document.getElementById('statlable2').innerHTML = 'Off!';
-		document.getElementById('dev1').style.backgroundColor = 'red';
-
         })
+        alert("Done 2")
     }
 
 	window.onload = GetStatus;
@@ -48,7 +42,7 @@
 </head>
 
 <body>
- Test
+
 
 </body>
 
