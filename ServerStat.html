@@ -8,13 +8,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 <script src="script.js"></script>
+
+<script src="/static/js/address.js" charset="utf-8"></script>
+
 <script>
 
 function GetStatus() {
 		
-        var originalURL = newaddress.ip+"/status";
+        var originalURL = "http://24.194.17.176/status";
 	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
-        
+		
         $.ajax({
         url: queryURL,
         method: "GET",
@@ -37,7 +40,6 @@ function GetStatus() {
 		document.getElementById('dev1').style.backgroundColor = 'red';
 
         })
-
     }
 
 	window.onload = GetStatus;

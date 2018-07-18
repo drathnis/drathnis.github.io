@@ -8,8 +8,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 <script src="script.js"></script>
-<script>
 
+
+<script>
+        var originalURL = "http://24.194.17.176/toggle";
+	    var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
+		
+        $.ajax({
+        url: queryURL,
+        method: "GET",
+		dataType: "json",
+        // this headers section is necessary for CORS-anywhere
+        headers: {
+        "x-requested-with": "xhr" 
+        }
+        }).done(function(response) {
+
+		
+		document.getElementById('statlable2').innerHTML = 'On!';
+		document.getElementById('dev1').style.backgroundColor = 'lime';
+		
+        console.log('CORS anywhere response', response);
+        }).fail(function(jqXHR, textStatus) { 
+        console.error(textStatus)
+        
+		document.getElementById('statlable2').innerHTML = 'Off!';
+		document.getElementById('dev1').style.backgroundColor = 'red';
+
+        })
+    }
+
+	window.onload = GetStatus;
 </script>
 
 <style>
