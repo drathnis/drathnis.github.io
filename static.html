@@ -1,0 +1,77 @@
+<!doctype html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+
+<html>
+
+<head>
+    <script src="/static/js/4x4_script.js" charset="utf-8"></script>
+    <script src="/static/js/address.js" charset="utf-8"></script>
+
+</head>
+
+<table>
+    <tr>
+    <td>
+        LEFT
+        <br>
+        <input id="cpick_TL_id" type="color" name="colpick_TL" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"/>
+        <br>
+
+    </td>
+    <td>
+        TOP
+        <br>
+        <input id="cpick_T_id" type="color" name="colpick_T" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"
+        />
+    </td>
+    <td>
+        RIGHT
+        <br>
+        <input id="cpick_TR_id" type="color" name="colpick_TR" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"
+        />
+    </td>
+  </tr>
+  <tr>
+    <td style="background: rgb(255,255,255)"></td>
+    <td>
+        ALL
+        <br>
+        <input id="cpick_ALL_id" type="color" name="colpick_ALL" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"
+        />
+    </td>
+  </tr>
+  <tr>
+    <td>
+        LEFT
+        <br>
+        <input id="cpick_BL_id" type="color" name="colpick_BL" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"
+        />
+    </td>
+    <td>
+        BOTTOM
+        <br>
+        <input id="cpick_B_id" type="color" name="colpick_B" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"
+        />
+    </td>
+    <td>
+        RIGHT
+        <br>
+        <input id="cpick_BR_id" type="color" name="colpick_BR" value="{{picker}}" class="input-color-value"
+         style="height:50px; width:50px"
+        />
+    </td>
+  </tr>
+</table>
+
+</html>

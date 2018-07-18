@@ -8,11 +8,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 <script src="script.js"></script>
+
+<script src="/static/js/address.js" charset="utf-8"></script>
+
 <script>
 	function GetOptions(){
 			
 			alert("v.01")
-			var originalURL = "http://24.194.15.104/print";
+			var originalURL = newaddress.ip+"/print";
 			var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
 			
 			$.ajax({
@@ -54,24 +57,28 @@
 <h1>
 	Hello!
 	<br>
-
+	This is still under development. :)
 </h1>
 
-<h2>
-	This is still under development. :)
-
-</h2>
 
 <h3>
     <button type="button" name="fourXfour"><a href="/fourXfour.html">Static Colors</a></button>
-    <button type="button" name="RnD"><a href="/modes">Dynamic Colors</a></button>
     <button type="button" name="RnD"><a href="/chase">Chase</a></button>
 	<button type="button" name="RnD"><a href="/fade">Fade</a></button>
 </h3>
 
 </form>
 
+<h4>
 
+	<button type="button" name="RnD"><a href="/toggle">Toggle</a></button>
+
+
+</h4>
+
+<div id="content">
+
+</div>
 
 
 
