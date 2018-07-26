@@ -1,282 +1,103 @@
-﻿<!doctype html>
-
+﻿<!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>Chase</title>
+<meta charset="utf-8">
+<title>Settings</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 
-<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="application/javascript" src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-
-<script src="/static/js/modes_script.js" charset="utf-8"></script>
-<script src="/static/js/address.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/js/Chase.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/js/address.js" charset="utf-8"></script>
 
 
-<style type ="text/css">
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
 
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    }
 
-    /* Modal Content */
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 50%;
-    }
-
-    /* The Close Button */
-    .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
 </style>
-
-
-    <style type="text/css">
-
-        @import "https://fonts.googleapis.com/css?family=Raleway";
-
-        #contact {
-            -webkit-user-select: none; /* Chrome/Safari */
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE10+ */
-            margin: 4em auto;
-            width: 100px;
-            height: 30px;
-            line-height: 30px;
-            background: teal;
-            color: white;
-            font-weight: 700;
-            text-align: center;
-            cursor: pointer;
-            border: 1px solid white;
-        }
-
-        #contact:hover {
-            background: #666;
-        }
-
-        #contact:active {
-            background: #444;
-        }
-
-        #contactForm {
-            display: none;
-            border: 6px solid salmon;
-            padding: 2em;
-            width: 400px;
-            text-align: center;
-            background: #fff;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%)
-        }
-
-
-    </style>
-
-    <style type="text/css">
-        .firstLabel {
-            margin-right: 50px;
-            margin-left: 120px;
-        }
-
-        .btn_class {
-            width: 90px;
-            height: 20px;
-
-        }
-
-        .lable {
-            width: 90px;
-            height: 20px;
-            padding-bottom: 30px
-
-        }
-
-        .slidecontainer {
-            width: 25%;
-        }
-
-        /* The slider itself */
-        .slider {
-            -webkit-appearance: none; /* Override default CSS styles */
-            appearance: none;
-            width: 25%;
-            height: 25px;
-            background: #d3d3d3;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-        }
-
-        /* Mouse-over effects */
-        .slider:hover {
-            opacity: 1; /* Fully shown on mouse-over */
-        }
-
-        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none; /* Override default look */
-            appearance: none;
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4CAF50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-        }
-
-        .slider::-moz-range-thumb {
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4CAF50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-        }
-
-        .MyStyle {
-            font-size: xx-large;
-            font-weight: bold;
-            font-style: oblique;
-            font-variant: normal;
-            color: #0000FF;
-        }
-
-    </style>
-
 
 </head>
 
-<body id='main_body'>
+<body>
 
-<form method="post">
+		<div>
+			<span class="label" style="margin-left:120px"><b>Top</b></span> 
+            <input type="checkbox" name="BoxT" value="t" class="CB" id="cbTop">
+		</div>
+		<div>
+			<input type="color" id="t_Color_1_id" name="t_Color_1" value="{{picker}}" class="option-color-value" style="margin-left:80px; width: 45px; height:45px;">
+			<input type="color" id="t_Color_2_id" name="t_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:5px; width: 45px; height:45px;">
+			<br>
+			<input type="range" name="speedT" id="speedT"  min="0" max="15" style="margin-left:80px; width:110px"/>
+		</div>
+		
+        <div>
+            <span class="label" style="margin-left:15px"><b>Top Left</b></span> 
+            <input type="checkbox" name="Box1" value="tL" class="CB" id="cbTL">
+            <span class="label" style="margin-left:65px"><b>Top Right</b></span>
+            <input type="checkbox" name="Box2" value="tR" class="CB" id="cbTR">
+        </div>
+
+        <div>
+            <input type="color" id="tL_Color_1_id" name="tL_Color_1" value="{{picker}}" class="option-color-value" style="margin-left:0px; width: 45px; height:45px;">
+            <input type="color" id="tL_Color_2_id" name="tL_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:10px; width: 45px; height:45px;">
+            <input type="color" id="tR_Color_1_id" name="tR_Color_1" value="{{picker}}" class="option-color-value" style="margin-left:50px; width: 45px; height:45px;">
+            <input type="color" id="tR_Color_2_id" name="tR_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:10px; width: 45px; height:45px;">
+       			<br>
+       		<input type="range" name="speedTL" id="speedTL"  min="0" max="15" style="margin-left:5px; width:110px"/>
+       		<input type="range" name="speedTR" id="speedTR"  min="0" max="15" style="margin-left:50px; width:110px"/>
+
+
+	    </div>
+        <div>
+            <span class="label" style="margin-left:15px"><b>Bottom Left</b></span>
+            <input type="checkbox" name="Box3" value="bL" class="CB" id="cbBL">
+            <span class="label" style="margin-left:35px"><b>Bottom Right</b></span>
+            <input type="checkbox" name="Box4" value="bR" class="CB" id="cbBR">
+        </div>
+
+        <div>
+            <input type="color" id="Color_1_id" name="bL_Color_1" value="{{picker}}" class="option-color-value" style="margin-left:0px; width: 45px; height:45px;">
+            <input type="color" id="Color_2_id" name="bL_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:10px; width: 45px; height:45px;">
+            <input type="color" id="Color_1_id" name="bR_Color_1" value="{{picker}}" class="option-color-value" style="margin-left:50px; width: 45px; height:45px;">
+            <input type="color" id="Color_2_id" name="bR_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:10px; width: 45px; height:45px;">
+            <br>
+       		<input type="range" name="speedBL" id="speedBL"  min="0" max="15" style="margin-left:5px; width:110px"/>
+       		<input type="range" name="speedBR" id="speedBR"  min="0" max="15" style="margin-left:50px; width:110px"/>
+
+        </div>
+        
+		<div>
+			<span class="label" style="margin-left:100px"><b>Bottom</b></span> 
+            <input type="checkbox" name="BoxB" value="b" class="CB" id="cbBottom">
+		</div>
+		<div>
+			<input type="color" id="b_Color_1_id" name="b_Color_1" value="{{picker}}" class="option-color-value" style="margin-left:80px; width: 45px; height:45px;">
+			<input type="color" id="b_Color_2_id" name="b_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:10px; width: 45px; height:45px;">
+			<br>
+			<input type="range" name="speedB" id="speedB"  min="0" max="15" style="margin-left:80px; width:110px"/>
+		</div>
 
     <div>
-    
-	<input type="checkbox" name="box1" value="Top_L" style="margin-left: 10px" > Top Left  
-	<input type="checkbox" name="box2" value="Top_R" style="margin-left: 45px"> Top Right<br>  
-	<input type="checkbox" name="box3" value="Bottom_L" style="margin-left: 10px"> Bottom Left 
-	<input type="checkbox" name="box4" value="Bottom_L" style="margin-left: 20px"> Bottom Right <br>  
+		<button type="button" id='preset1_btn' class="Preset">Off</button><br>
+		<button type="button" id='preset2_btn' class="Preset">Red/Grean</button><br>
+		<button type="button" id='preset3_btn' class="Preset">Blue/Green</button><br>
+		<button type="button" id='preset4_btn' class="Preset">Red/Blue</button><br>
+		<button type="button" id='preset5_btn' class="Preset">Who Knows...</button><br>
+		<button type="button" id='preset6_btn' class="Preset">Reds</button><br>
+		
+		
+		<button type="button" id='preset7_btn' class="Preset">Greens</button><br>
+		<button type="button" id='preset8_btn' class="Preset">Blues</button><br>
+		<button type="button" id='preset9_btn' class="Preset">Random</button><br>
 
+
+
+		<button onclick="GetOptions()" type="button" id='L_Close_btn'>Done</button>
+		        
     </div>
 
-    <div>
-        <button type="button" name="options_btn_1" id='open_pop_1' style="margin-left: 0px">Settings</button>
-    </div>
-
-</form>
-
-</body>
-<body id="body_pop">
-
-<div id="left_Popup" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close" id="L_close_id">&times;</span>
-
-        <!-- Top  -->
-        <!-- Left  -->
-
-        <div>
-            <span class="label"><b>Top Left</b></span>
-        </div>
-        <br>
-        <div>
-            <label>Color One</label>
-            <label style="margin-left:30px">Color Two</label>
-        	<br>
-            <input type="color" id="Color_1_id" name="L_Color_1" value="{{picker}}" class="option-color-value">
-            <input type="color" id="Color_2_id" name="L_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:50px">
-        </div>
- 		<!-- Right  -->
-        <div>
-            <span class="label"><b>Top Right</b></span>
-        </div>
-        <br>
-        <div>
-            <label>Color One</label>
-            <label style="margin-left:30px">Color Two</label>
-        	<br>
-            <input type="color" id="Color_1_id" name="R_Color_1" value="{{picker}}" class="option-color-value">
-            <input type="color" id="Color_2_id" name="R_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:50px">
-        </div>
- 		</div>
-        <button type="button" id='L_Close_btn'>Done</button>
-		<button type="button" id='L_preset1_btn'>Preset1</button>
-    </div>
-
-
-
-
-<script>
-
-
-    var modal_L = document.getElementById('left_Popup');
-    var l_close_btn = document.getElementById("L_Close_btn");
-	var L_preset1_btn = document.getElementById("L_preset1_btn");	
-    var btn1 = document.getElementById("open_pop_1");
-    var l_span = document.getElementsByClassName("close")[0];
-
-	
-	L_preset1_btn.onclick = function(){
-		preset(0);
-		modal_L.style.display = "none";
-	}
-	
-	
-    btn1.onclick = function () {
-        modal_L.style.display = "block";
-    }
-
-    l_span.onclick = function () {
-        modal_L.style.display = "none";
-    }
-    l_close_btn.onclick = function () {
-        modal_L.style.display = "none";
-    }
-
-
-    window.onclick = function (event) {
-        if (event.target == modal_L) {
-            modal_L.style.display = "none";
-        }
-    }
-</script>
-
-<p>
-        <button type="button" id='Test_btn' onclick="GetOptions()">Update!</button>
-        </p>
 
 </body>
 
