@@ -5,7 +5,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>Chase</title>
+    <title>Modes</title>
 
 
 <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -182,17 +182,32 @@
 <form method="post">
 
     <div>
-    
-	<input type="checkbox" name="box1" value="Top_L" style="margin-left: 10px" > Top Left  
-	<input type="checkbox" name="box2" value="Top_R" style="margin-left: 45px"> Top Right<br>  
-	<input type="checkbox" name="box3" value="Bottom_L" style="margin-left: 10px"> Bottom Left 
-	<input type="checkbox" name="box4" value="Bottom_L" style="margin-left: 20px"> Bottom Right <br>  
-
+        <span id="Label_1">Select Led Strip</span>
+        <span id="Label_2" style="margin-left:32px">Left Side</span>
+        <span id="Label_3" style="margin-left:60px">Right Side</span>
     </div>
 
     <div>
-        <button type="button" name="options_btn_1" id='open_pop_1' style="margin-left: 0px">Settings</button>
+        <select name="enable_strips" style="width: 100px" class="mode_selector" id='enable_strips_id'>
+            <option value="0">Off</option>
+            <option value="1">Top</option>
+            <option value="2">Bottom</option>
+        </select>
+        <select style="margin-left:29px; width: 90px" name="left_side" class="mode_selector" id="left_side_id">
+            <option value="0">Off</option>
+            <option value="1">Mode 1</option>
+        </select>
+        <select style="margin-left:25px; width: 90px" name="right_side" class="mode_selector" id="right_side_id">
+            <option value="0">Off</option>
+            <option value="1">Mode 1</option>
+        </select>
     </div>
+
+    <dev>
+        <button type="button" id='Test_btn' onclick="GetOptions()">Update!</button>
+        <button type="button" name="options_btn_1" id='open_pop_1' style="margin-left: 80px">Options 1</button>
+        <button type="button" name="options_btn_2" id='open_pop_2' style="margin-left: 60px">Options 2</button>
+    </dev>
 
 </form>
 
@@ -204,66 +219,117 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close" id="L_close_id">&times;</span>
-
-        <!-- Top  -->
-        <!-- Left  -->
-
         <div>
-            <span class="label"><b>Top Left</b></span>
+            <span class="label"><b>Options For Left Side</b></span>
         </div>
         <br>
         <div>
             <label>Color One</label>
             <label style="margin-left:30px">Color Two</label>
-        	<br>
+        </div>
+        <br>
+        <div>
             <input type="color" id="Color_1_id" name="L_Color_1" value="{{picker}}" class="option-color-value">
-            <input type="color" id="Color_2_id" name="L_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:50px">
+            <input type="color" id="Color_2_id" name="L_Color_2" value="{{picker}}" class="option-color-value"
+                   style="margin-left:55px">
         </div>
- 		<!-- Right  -->
         <div>
-            <span class="label"><b>Top Right</b></span>
+            <span class="label">Speed</span>
         </div>
-        <br>
-        <div>
-            <label>Color One</label>
-            <label style="margin-left:30px">Color Two</label>
-        	<br>
-            <input type="color" id="Color_1_id" name="R_Color_1" value="{{picker}}" class="option-color-value">
-            <input type="color" id="Color_2_id" name="R_Color_2" value="{{picker}}" class="option-color-value" style="margin-left:50px">
+
+        <div class="slidecontainer" style="width: auto">
+            <input type="range" min=".01" max=".09" value=".05" step=".01" class="slider" id="L_Speed_slider"
+                   style="direction: rtl">
         </div>
- 		</div>
+
         <button type="button" id='L_Close_btn'>Done</button>
 		<button type="button" id='L_preset1_btn'>Preset1</button>
     </div>
 
+</div>
 
+<div id="right_Popup" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="R_close_id">&times;</span>
+        <div>
+            <span class="label"><b>Options For Right Side</b></span>
+        </div>
+        <br>
+        <div>
+            <label>Color One</label>
+            <label style="margin-left:30px">Color Two</label>
+        </div>
+        <br>
+        <div>
+            <input type="color" id="R_Color_1_id" name="R_Color_1" value="{{picker}}" class="option-color-value">
+            <input type="color" id="R_Color_2_id" name="R_Color_2" value="{{picker}}" class="option-color-value"
+                   style="margin-left:55px">
+        </div>
+        <div>
+            <span class="label">Speed</span>
+        </div>
+
+        <div class="slidecontainer" style="width: auto">
+            <input type="range" min=".01" max=".09" value=".05" step=".01" class="slider" id="R_Speed_slider"
+                   style="direction: rtl">
+        </div>
+
+        <button type="button" id='R_Close_btn'>Done</button>
+		<button type="button" id='R_preset1_btn'>Preset1</button>
+    </div>
+
+</div>
+
+</div>
 
 <script>
 
 
     var modal_L = document.getElementById('left_Popup');
-    var l_close_btn = document.getElementById("L_Close_btn");
-	var L_preset1_btn = document.getElementById("L_preset1_btn");	
-    var btn1 = document.getElementById("open_pop_1");
-    var l_span = document.getElementsByClassName("close")[0];
+    var modal_R = document.getElementById('right_Popup');
 
+    var l_close_btn = document.getElementById("L_Close_btn");
+    var r_close_btn = document.getElementById("R_Close_btn");
+	
+	var R_preset1_btn = document.getElementById("R_preset1_btn");
+	var L_preset1_btn = document.getElementById("L_preset1_btn");
+	
+    var btn1 = document.getElementById("open_pop_1");
+    var btn2 = document.getElementById("open_pop_2");
+
+    var l_span = document.getElementsByClassName("close")[0];
+    var r_span = document.getElementsByClassName("close")[1];
 	
 	L_preset1_btn.onclick = function(){
 		preset(0);
 		modal_L.style.display = "none";
 	}
 	
+	R_preset1_btn.onclick = function(){
+		preset(1);
+		modal_R.style.display = "none";
+	}
 	
     btn1.onclick = function () {
         modal_L.style.display = "block";
+    }
+    btn2.onclick = function () {
+        modal_R.style.display = "block";
     }
 
     l_span.onclick = function () {
         modal_L.style.display = "none";
     }
+    r_span.onclick = function () {
+        modal_R.style.display = "none";
+    }
     l_close_btn.onclick = function () {
         modal_L.style.display = "none";
+    }
+    r_close_btn.onclick = function () {
+        modal_R.style.display = "none";
     }
 
 
@@ -271,12 +337,11 @@
         if (event.target == modal_L) {
             modal_L.style.display = "none";
         }
+        if (event.target == modal_R) {
+            modal_R.style.display = "none";
+        }
     }
 </script>
-
-<p>
-        <button type="button" id='Test_btn' onclick="GetOptions()">Update!</button>
-        </p>
 
 </body>
 
